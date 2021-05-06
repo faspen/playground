@@ -9,6 +9,7 @@ Random console that does random things
 Below is a table listing the current commands for the console
 
 | Command | Action |
+| ------ | ------ |
 | create | creates a python file, automatically writes a shabang and makes the file executable |
 
 How to use them:
