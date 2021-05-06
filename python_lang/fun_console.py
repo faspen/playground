@@ -2,6 +2,7 @@
 """ Fun console """
 import cmd
 from sys import argv
+from os import chmod
 
 
 class FunConsole(cmd.Cmd):
@@ -14,11 +15,15 @@ class FunConsole(cmd.Cmd):
         """Prepare python file
           Enter name after typing 'create'
           Leave out '.py'
+          Do not worry about spaces
         """
         arg = arg + ".py"
+        arg = arg.replace(' ', '_')
         sentence = "#!/usr/bin/python3\n"
+
         with open(arg, 'w') as f:
             f.write(sentence)
+        chmod(arg, 0o744)
 
     def emptyline(self):
         pass
